@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ZUS | القائمة الرقمية</title>
+<style>
+:root{--purple:#74559b;--light:#f4effa;--ink:#2e2638;--gold:#d9c6a0}
+*{box-sizing:border-box}body{margin:0;background:#f7f4fa;color:var(--ink);font-family:Tahoma,Arial,sans-serif}
+header{background:linear-gradient(135deg,#5d427e,#9b83b8);color:white;text-align:center;padding:28px 16px 24px}
+.logo{width:72px;height:72px;border:2px solid #fff;border-radius:50%;margin:auto auto 8px;display:grid;place-items:center;font-size:25px;font-weight:bold}
+h1{font-size:30px;margin:5px 0}header p{margin:6px 0;color:#f3edf8}
+.controls{position:sticky;top:0;background:#fff;padding:12px;box-shadow:0 2px 12px #0001;z-index:2}
+input{width:100%;padding:12px;border:1px solid #ddd0eb;border-radius:12px;font-size:16px;margin-bottom:9px}
+nav{display:flex;gap:7px;overflow:auto;padding-bottom:2px}nav button{white-space:nowrap;border:1px solid #ddd0eb;background:#f7f3fb;color:#5d427e;border-radius:20px;padding:8px 12px}
+nav button.active{background:var(--purple);color:white}
+main{max-width:760px;margin:auto;padding:12px}.section{background:#fff;border-radius:16px;margin:14px 0;padding:16px;box-shadow:0 3px 14px #39234e0c}
+h2{color:var(--purple);font-size:21px;margin:0 0 12px;border-bottom:1px solid #eee5f5;padding-bottom:10px}
+.item{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px dashed #e8e0ee}.item:last-child{border-bottom:0}
+.names{flex:1}.fr{font-size:12px;color:#82748f;margin-top:4px;direction:ltr;text-align:right}
+.price{font-weight:bold;color:#5d427e;white-space:nowrap}.price small{font-weight:normal;font-size:11px}
+footer{text-align:center;padding:24px;color:#756783;font-size:13px}
+</style></head><body>
+<header><div class="logo">ZUS</div><h1>القائمة الرقمية | Menu digital</h1><p>القهوة • المشروبات • الحلويات • الفطور</p><p>Bienvenue chez ZUS — مرحبًا بكم في ZUS</p></header>
+<div class="controls"><input id="search" placeholder="ابحث عن منتج… / Rechercher un produit"><nav id="nav"></nav></div>
+<main id="menu"></main><footer>جميع الأسعار بالدرهم المغربي (DH) • Tous les prix en dirhams marocains</footer>
+<script>
+const sections = [{"en": "Gaufres de Liège", "ar": "وافل لييج", "items": [{"en": "Gaufre nature (sucre)", "ar": "وافل سادة بالسكر", "price": 10}, {"en": "Gaufre nature (confiture, miel)", "ar": "وافل بالمربى أو العسل", "price": 12}, {"en": "Gaufre Nutella", "ar": "وافل نوتيلا", "price": 15}, {"en": "Gaufre kunafa pistache", "ar": "وافل كنافة بالفستق", "price": 17}, {"en": "Gaufre Lotus Speculoos", "ar": "وافل لوتس سبكولوس", "price": 19}, {"en": "Gaufre blanche neige", "ar": "وافل بلاَنش نيج", "price": 25}]}, {"en": "Crêpes", "ar": "الكريب", "items": [{"en": "Crêpe nature (sucre)", "ar": "كريب سادة بالسكر", "price": 12}, {"en": "Crêpe nature (miel)", "ar": "كريب بالعسل", "price": 14}, {"en": "Crêpe Nutella", "ar": "كريب نوتيلا", "price": 17}, {"en": "Crêpe Nutella banane", "ar": "كريب نوتيلا بالموز", "price": 20}, {"en": "Crêpe Oreo", "ar": "كريب أوريو", "price": 23}, {"en": "Crêpe spaghetti ZUS", "ar": "كريب سباغيتي ZUS", "price": 23}, {"en": "Crêpe tagliatelles ZUS", "ar": "كريب تالياتيلي ZUS", "price": 24}, {"en": "Crêpe kunafa pistache", "ar": "كريب كنافة بالفستق", "price": 25}, {"en": "Crêpe Lotus Speculoos", "ar": "كريب لوتس سبكولوس", "price": 29}, {"en": "Crêpe blanche neige", "ar": "كريب بلانش نيج", "price": 35}]}, {"en": "ZUS Deal Breakfast", "ar": "عروض فطور ZUS", "items": [{"en": "Pauz Zen Cake", "ar": "باوز زين كيك", "price": 9}, {"en": "Pauz Zen Beldi", "ar": "باوز زين بلدي", "price": 12}, {"en": "Pauz Zen Bahla", "ar": "باوز زين بهلة", "price": 12}, {"en": "Pauz Zen Briwate", "ar": "باوز زين بريوات", "price": 16}, {"en": "Pauz Zen French Toast", "ar": "باوز زين فرنش توست", "price": 35}, {"en": "Deal Pauz Zen (Beldi + thé)", "ar": "عرض بلدي مع الشاي", "price": 15}, {"en": "Deal Pauz Zen (Bahla + thé)", "ar": "عرض بهلة مع الشاي", "price": 15}, {"en": "Deal Pauz Zen (Briwate + thé)", "ar": "عرض بريوات مع الشاي", "price": 19}, {"en": "Supplément miel, beurre, confiture", "ar": "إضافة العسل أو الزبدة أو المربى", "price": 2}]}, {"en": "Boissons chaudes", "ar": "المشروبات الساخنة", "items": [{"en": "Espresso", "ar": "إسبريسو", "price": 8}, {"en": "Americano", "ar": "أمريكانو", "price": 10}, {"en": "Marocchino Nass Nass", "ar": "ماروتشينو نص نص", "price": 10}, {"en": "Cappuccino", "ar": "كابتشينو", "price": 12}, {"en": "Chocolat chaud", "ar": "شوكولاتة ساخنة", "price": 13}, {"en": "Cappuccino Nutella", "ar": "كابتشينو نوتيلا", "price": 15}, {"en": "ZUS Spanish Latte", "ar": "ZUS سبانيش لاتيه", "price": 18}]}, {"en": "Milkshake", "ar": "ميلك شيك", "items": [{"en": "ZUS Cookies", "ar": "ZUS كوكيز", "price": 22}, {"en": "ZUS Oreo Crush", "ar": "ZUS أوريو كراش", "price": 24}, {"en": "ZUS Frappe Chocolat", "ar": "ZUS فرابيه بالشوكولاتة", "price": 26}, {"en": "ZUS Frappe Fraise", "ar": "ZUS فرابيه بالفراولة", "price": 26}, {"en": "ZUS Frappe Caramel", "ar": "ZUS فرابيه بالكراميل", "price": 26}, {"en": "ZUS Snickers Bomb", "ar": "ZUS سنيكرز بومب", "price": 30}, {"en": "Original Piña Colada", "ar": "بينا كولادا الأصلية", "price": 32}, {"en": "Grand Frappuccino Strawberry", "ar": "فرابتشينو كبير بالفراولة", "price": 33}, {"en": "Grand Frappuccino Blueberry", "ar": "فرابتشينو كبير بالتوت الأزرق", "price": 33}]}, {"en": "Glacées & Iced", "ar": "المشروبات المثلجة", "items": [{"en": "ZUS Iced Coffee", "ar": "قهوة ZUS المثلجة", "price": 12}, {"en": "Mojito classique", "ar": "موهيتو كلاسيكي", "price": 12}, {"en": "Mojito fraise", "ar": "موهيتو بالفراولة", "price": 18}, {"en": "Mojito mangue", "ar": "موهيتو بالمانجو", "price": 18}, {"en": "Iced Macchiato Caramel", "ar": "آيسد ماكياتو بالكراميل", "price": 19}, {"en": "Iced Spanish Latte", "ar": "آيسد سبانيش لاتيه", "price": 20}, {"en": "Iced Coffee Orange Juice", "ar": "قهوة مثلجة مع عصير البرتقال", "price": 29}]}, {"en": "Jus", "ar": "العصائر", "items": [{"en": "Jus d’orange", "ar": "عصير البرتقال", "price": 13}, {"en": "Banane", "ar": "عصير الموز", "price": 16}, {"en": "Fraise", "ar": "عصير الفراولة", "price": 16}, {"en": "Mangue", "ar": "عصير المانجو", "price": 19}, {"en": "Ananas", "ar": "عصير الأناناس", "price": 20}, {"en": "Mocktail Sunshine Twist", "ar": "موكتيل صن شاين تويست", "price": 30}]}, {"en": "Green Tea & Coffee", "ar": "الشاي الأخضر والقهوة", "items": [{"en": "Thé Mna3na3", "ar": "شاي بالنعناع", "price": 5}, {"en": "Matcha Latte", "ar": "ماتشا لاتيه", "price": 40}, {"en": "Matcha Iced Latte", "ar": "ماتشا لاتيه مثلجة", "price": 44}, {"en": "Matcha Smoothie Banana", "ar": "سموذي ماتشا بالموز", "price": 49}, {"en": "Detox 1", "ar": "ديتوكس 1", "price": 42}, {"en": "Detox 2", "ar": "ديتوكس 2", "price": 45}]}];
+const nav=document.getElementById('nav'), menu=document.getElementById('menu'), search=document.getElementById('search');
+let active='all';
+function render(){
+ nav.innerHTML='<button class="'+(active==='all'?'active':'')+'" data-id="all">الكل / Tout</button>'+sections.map((s,i)=>'<button class="'+(active===String(i)?'active':'')+'" data-id="'+i+'">'+s.ar+'</button>').join('');
+ nav.querySelectorAll('button').forEach(b=>b.onclick=()=>{active=b.dataset.id;render()});
+ const q=search.value.trim().toLowerCase();
+ menu.innerHTML=sections.map((s,i)=>{
+ if(active!=='all'&&active!==String(i))return '';
+ const items=s.items.filter(it=>(it.ar+' '+it.en).toLowerCase().includes(q));
+ if(!items.length)return '';
+ return '<section class="section"><h2>'+s.ar+' <span style="font-size:14px;font-weight:normal;color:#9789a4">— '+s.en+'</span></h2>'+items.map(it=>'<div class="item"><div class="names"><div>'+it.ar+'</div><div class="fr">'+it.en+'</div></div><div class="price">'+it.price+' <small>DH</small></div></div>').join('')+'</section>';
+ }).join('');
+}
+search.addEventListener('input',render);render();
+</script></body></html>
