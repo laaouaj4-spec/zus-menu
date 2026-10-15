@@ -2,565 +2,372 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#76509a">
-  <meta name="description" content="Découvrez le menu ZUS Café : boissons, milkshakes, jus et gourmandises.">
-  <title>ZUS Café | Menu officiel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#7952a8">
+  <meta name="description" content="Découvrez les menus boissons et douceurs de ZUS Café.">
+  <title>ZUS Café | Notre Menu</title>
 
   <style>
     :root {
-      --purple: #76509a;
-      --deep: #43275f;
-      --light: #f4edf9;
-      --paper: #ffffff;
-      --ink: #30243b;
-      --muted: #75677e;
-      --line: #e8def0;
-      --shadow: 0 8px 28px rgba(67, 39, 95, .08);
+      --purple: #7952a8;
+      --purple-dark: #50316f;
+      --purple-light: #f3edf9;
+      --white: #ffffff;
+      --text: #30243a;
+      --muted: #766c80;
+      --border: #e9e0f1;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 150px;
     }
 
     body {
       margin: 0;
-      color: var(--ink);
-      background: #faf7fc;
       font-family: Arial, Helvetica, sans-serif;
+      background: #faf8fc;
+      color: var(--text);
     }
 
-    button, input { font: inherit; }
-
-    .hero {
-      text-align: center;
-      color: white;
-      padding: 34px 16px 30px;
-      background: linear-gradient(135deg, #43275f, #9879b6);
-    }
-
-    .logo {
-      width: 90px;
-      height: 90px;
-      object-fit: contain;
-      background: white;
-      border-radius: 50%;
-      padding: 5px;
-      margin-bottom: 10px;
-      box-shadow: 0 5px 20px #24133345;
-    }
-
-    .hero h1 {
-      font-size: clamp(30px, 6vw, 46px);
-      letter-spacing: 3px;
-      margin: 5px 0;
-    }
-
-    .hero p {
-      margin: 8px 0;
-      line-height: 1.6;
-    }
-
-    .tagline {
-      color: #f0e4fb;
-      font-size: 15px;
-    }
-
-    .toolbar {
+    header {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding: 15px 20px;
       position: sticky;
       top: 0;
       z-index: 10;
-      background: rgba(255, 255, 255, .96);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--line);
-      box-shadow: 0 3px 15px #43275f0d;
-      padding: 12px 15px;
     }
 
-    .toolbar-inner {
-      max-width: 1000px;
+    .nav {
+      max-width: 1100px;
       margin: auto;
-    }
-
-    .search-row {
       display: flex;
-      gap: 8px;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
     }
 
-    #search {
-      width: 100%;
-      min-width: 0;
-      padding: 13px 15px;
-      border: 1px solid #d9c7e8;
-      border-radius: 14px;
-      outline-color: var(--purple);
-      background: white;
-      color: var(--ink);
+    .brand {
+      color: var(--purple-dark);
+      font-size: 28px;
+      font-weight: 900;
+      letter-spacing: 3px;
     }
 
-    #clear {
-      border: 0;
-      border-radius: 12px;
-      background: var(--light);
-      color: var(--deep);
-      padding: 0 15px;
-      cursor: pointer;
+    .brand small {
+      display: block;
+      font-size: 10px;
+      letter-spacing: 4px;
+      color: var(--muted);
+      text-align: center;
+      margin-top: 2px;
     }
 
-    #categories {
-      display: flex;
-      gap: 8px;
-      overflow-x: auto;
-      padding: 10px 0 2px;
-      scrollbar-width: thin;
+    .nav a {
+      color: var(--purple-dark);
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 14px;
     }
 
-    .chip {
-      flex: 0 0 auto;
-      border: 1px solid #e1d2ed;
-      border-radius: 999px;
-      padding: 9px 14px;
-      color: var(--deep);
-      background: #faf7fc;
-      cursor: pointer;
-      transition: background .2s, color .2s;
+    .hero {
+      text-align: center;
+      padding: 58px 20px 48px;
+      background: linear-gradient(145deg, #f1e8fa, #ffffff 75%);
     }
 
-    .chip:hover, .chip.active {
+    .eyebrow {
+      color: var(--purple);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    h1 {
+      font-size: clamp(36px, 7vw, 60px);
+      color: var(--purple-dark);
+      margin: 15px 0;
+    }
+
+    .hero p {
+      color: var(--muted);
+      max-width: 540px;
+      margin: auto;
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    .hero-button {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 14px 25px;
       background: var(--purple);
       color: white;
-      border-color: var(--purple);
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: bold;
     }
 
     main {
-      max-width: 1000px;
+      max-width: 1100px;
       margin: auto;
-      padding: 18px 15px 30px;
+      padding: 35px 18px 55px;
     }
 
-    .welcome {
+    .section-title {
       text-align: center;
-      padding: 15px 8px 20px;
+      color: var(--purple-dark);
+      font-size: 30px;
+      margin-bottom: 10px;
     }
 
-    .welcome h2 {
-      color: var(--deep);
-      margin: 0 0 8px;
-      font-size: 27px;
-    }
-
-    .welcome p {
-      color: var(--muted);
-      line-height: 1.7;
-      margin: 0 auto;
-      max-width: 650px;
-    }
-
-    .section {
-      background: var(--paper);
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: 18px;
-      margin: 15px 0;
-      box-shadow: var(--shadow);
-    }
-
-    .section h2 {
-      color: var(--purple);
-      font-size: 21px;
-      margin: 0 0 12px;
-      padding-bottom: 12px;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .item {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 14px 2px;
-      border-bottom: 1px dashed var(--line);
-    }
-
-    .item:last-child { border-bottom: 0; }
-
-    .item-name {
-      flex: 1;
-      line-height: 1.5;
-      overflow-wrap: anywhere;
-    }
-
-    .price {
-      white-space: nowrap;
-      color: var(--deep);
-      font-weight: 700;
-      background: var(--light);
-      border-radius: 9px;
-      padding: 7px 10px;
-    }
-
-    #empty {
-      display: none;
-      text-align: center;
-      background: white;
-      padding: 25px;
-      border-radius: 16px;
-      color: var(--muted);
-    }
-
-    .gallery-title {
-      margin-top: 35px;
-      text-align: center;
-      color: var(--deep);
-    }
-
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 16px;
-    }
-
-    .menu-photo {
-      display: block;
-      overflow: hidden;
-      background: white;
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      box-shadow: var(--shadow);
-      color: var(--deep);
-      text-decoration: none;
-    }
-
-    .menu-photo img {
-      display: block;
-      width: 100%;
-      height: auto;
-    }
-
-    .photo-caption {
-      padding: 12px;
-      text-align: center;
-      font-weight: 700;
-    }
-
-    .photo-hint {
+    .section-description {
       text-align: center;
       color: var(--muted);
-      font-size: 13px;
+      margin-bottom: 30px;
       line-height: 1.6;
     }
 
-    .top-link {
-      display: block;
-      width: fit-content;
-      margin: 25px auto;
-      padding: 11px 17px;
-      border-radius: 999px;
+    .menus {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .menu-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 22px;
+      box-shadow: 0 8px 28px rgba(80, 49, 111, 0.06);
+      min-width: 0;
+    }
+
+    .menu-icon {
+      width: 54px;
+      height: 54px;
+      display: grid;
+      place-items: center;
+      border-radius: 16px;
+      background: var(--purple-light);
+      font-size: 27px;
+      margin-bottom: 15px;
+    }
+
+    .menu-card h3 {
+      font-size: 23px;
+      color: var(--purple-dark);
+      margin: 0 0 10px;
+    }
+
+    .menu-card p {
+      color: var(--muted);
+      line-height: 1.6;
+      min-height: 48px;
+    }
+
+    .menu-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .action {
+      display: inline-block;
+      text-align: center;
+      padding: 12px 16px;
+      border-radius: 12px;
       background: var(--purple);
       color: white;
       text-decoration: none;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .action.secondary {
+      background: var(--purple-light);
+      color: var(--purple-dark);
+    }
+
+    .viewer-section {
+      margin-top: 45px;
+    }
+
+    .viewer-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      overflow: hidden;
+      margin-top: 22px;
+    }
+
+    .viewer-heading {
+      padding: 17px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .viewer-heading h3 {
+      color: var(--purple-dark);
+      margin: 0;
+    }
+
+    .pdf-viewer {
+      display: block;
+      width: 100%;
+      height: 650px;
+      border: 0;
+      background: #f4f0f7;
+    }
+
+    .viewer-note {
+      padding: 14px 18px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.6;
+      border-top: 1px solid var(--border);
     }
 
     footer {
+      background: var(--purple-dark);
+      color: white;
       text-align: center;
-      background: #f0e7f7;
-      padding: 25px 15px;
-      color: var(--muted);
-      font-size: 13px;
+      padding: 28px 18px;
       line-height: 1.8;
     }
 
-    footer strong { color: var(--deep); }
-
-    @media (max-width: 600px) {
-      .hero { padding: 26px 12px; }
-      .logo { width: 76px; height: 76px; }
-      .gallery { grid-template-columns: 1fr; }
-      .section { padding: 15px; }
-      .item { gap: 8px; font-size: 14px; }
-      .price { padding: 7px 8px; }
+    footer strong {
+      letter-spacing: 3px;
     }
 
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      * { transition: none !important; }
+    @media (max-width: 700px) {
+      .menus {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 42px;
+      }
+
+      .pdf-viewer {
+        height: 520px;
+      }
+
+      .menu-card p {
+        min-height: 0;
+      }
     }
   </style>
 </head>
 
 <body>
-  <header class="hero" id="top">
-    <img class="logo"
-         src="./logo-zus-original.png"
-         alt="Logo ZUS Café"
-         onerror="this.style.display='none'">
-
-    <h1>ZUS CAFÉ</h1>
-    <p class="tagline">Good Food · Good Mood</p>
-    <p>Boissons · Milkshakes · Jus · Gourmandises</p>
+  <header>
+    <div class="nav">
+      <div class="brand">
+        ZUS
+        <small>CAFÉ</small>
+      </div>
+      <a href="#menus">Découvrir nos menus ↓</a>
+    </div>
   </header>
 
-  <div class="toolbar">
-    <div class="toolbar-inner">
-      <div class="search-row">
-        <input id="search" type="search"
-               placeholder="Rechercher un produit..."
-               aria-label="Rechercher un produit">
-        <button id="clear" type="button" aria-label="Effacer la recherche">
-          Effacer
-        </button>
-      </div>
-      <nav id="categories" aria-label="Catégories du menu"></nav>
-    </div>
-  </div>
+  <section class="hero">
+    <div class="eyebrow">Bienvenue chez ZUS Café</div>
+    <h1>Un moment pour vous.</h1>
+    <p>
+      Découvrez notre sélection de boissons et de douceurs.
+      Consultez nos menus directement sur votre téléphone.
+    </p>
+    <a class="hero-button" href="#menus">Découvrir le menu</a>
+  </section>
 
   <main>
-    <section class="welcome">
-      <h2>Notre menu</h2>
-      <p>
-        Découvrez notre sélection de boissons et de gourmandises.
-        Recherchez un produit ou choisissez une catégorie pour consulter
-        les prix en dirhams marocains.
+    <section id="menus">
+      <h2 class="section-title">Nos Menus</h2>
+      <p class="section-description">
+        Choisissez votre menu pour consulter la carte originale.
       </p>
+
+      <div class="menus">
+        <article class="menu-card">
+          <div class="menu-icon" aria-hidden="true">☕</div>
+          <h3>Menu Boissons</h3>
+          <p>
+            Découvrez notre carte des boissons et consultez les
+            informations présentes sur le menu original.
+          </p>
+          <div class="menu-actions">
+            <a class="action" href="./Menu%20Drinks.pdf" target="_blank"
+               rel="noopener">Voir le menu</a>
+            <a class="action secondary" href="./Menu%20Drinks.pdf"
+               download>Télécharger PDF</a>
+          </div>
+        </article>
+
+        <article class="menu-card">
+          <div class="menu-icon" aria-hidden="true">🍰</div>
+          <h3>Menu Douceurs</h3>
+          <p>
+            Retrouvez notre carte des douceurs et des desserts
+            dans son document original.
+          </p>
+          <div class="menu-actions">
+            <a class="action" href="./Menu%20sweeties.pdf" target="_blank"
+               rel="noopener">Voir le menu</a>
+            <a class="action secondary" href="./Menu%20sweeties.pdf"
+               download>Télécharger PDF</a>
+          </div>
+        </article>
+      </div>
     </section>
 
-    <div id="menu"></div>
-    <p id="empty" role="status">Aucun produit trouvé. Essayez un autre mot.</p>
+    <section class="viewer-section">
+      <h2 class="section-title">Consulter les cartes</h2>
+      <p class="section-description">
+        Les documents originaux sont affichés ci-dessous.
+        Sur téléphone, utilisez « Voir le menu » si l'aperçu ne s'affiche pas.
+      </p>
 
-    <h2 class="gallery-title">Le menu original en images</h2>
-    <p class="photo-hint">
-      Touchez une image pour ouvrir la version originale en grand.
-    </p>
+      <div class="viewer-card">
+        <div class="viewer-heading">
+          <h3>☕ Menu Boissons</h3>
+          <a class="action" href="./Menu%20Drinks.pdf" target="_blank"
+             rel="noopener">Ouvrir en plein écran</a>
+        </div>
+        <iframe class="pdf-viewer" src="./Menu%20Drinks.pdf"
+                title="Menu original des boissons"></iframe>
+        <div class="viewer-note">
+          Si le document ne s'affiche pas, cliquez sur « Ouvrir en plein écran ».
+        </div>
+      </div>
 
-    <section class="gallery" aria-label="Photos originales du menu">
-      <a class="menu-photo"
-         href="./menu%20zus%201.jpeg"
-         target="_blank" rel="noopener">
-        <img src="./menu%20zus%201.jpeg"
-             alt="Première page du menu original ZUS"
-             loading="lazy">
-        <div class="photo-caption">Menu original — Page 1</div>
-      </a>
-
-      <a class="menu-photo"
-         href="./menu%20zus%202.jpeg"
-         target="_blank" rel="noopener">
-        <img src="./menu%20zus%202.jpeg"
-             alt="Deuxième page du menu original ZUS"
-             loading="lazy">
-        <div class="photo-caption">Menu original — Page 2</div>
-      </a>
+      <div class="viewer-card">
+        <div class="viewer-heading">
+          <h3>🍰 Menu Douceurs</h3>
+          <a class="action" href="./Menu%20sweeties.pdf" target="_blank"
+             rel="noopener">Ouvrir en plein écran</a>
+        </div>
+        <iframe class="pdf-viewer" src="./Menu%20sweeties.pdf"
+                title="Menu original des douceurs"></iframe>
+        <div class="viewer-note">
+          Si le document ne s'affiche pas, cliquez sur « Ouvrir en plein écran ».
+        </div>
+      </div>
     </section>
-
-    <a class="top-link" href="#top">↑ Retour en haut</a>
   </main>
 
   <footer>
-    <strong>ZUS CAFÉ</strong><br>
-    Les prix sont indiqués en dirhams marocains (DH).<br>
-    Merci de votre visite !
+    <strong>ZUS CAFÉ</strong>
+    <div>Merci de votre visite.</div>
   </footer>
-
-  <script>
-    // Catalogue actuel du site.
-    // Vérifiez les noms et les prix avec vos deux menus originaux.
-    const sections = [
-      {
-        name: "Gaufres de Liège",
-        items: [
-          {name:"Gaufre nature (sucre)",price:10},
-          {name:"Gaufre nature (confiture, miel)",price:12},
-          {name:"Gaufre Nutella",price:15},
-          {name:"Gaufre kunafa pistache",price:17},
-          {name:"Gaufre Lotus Speculoos",price:19},
-          {name:"Gaufre blanche neige",price:25}
-        ]
-      },
-      {
-        name: "Crêpes",
-        items: [
-          {name:"Crêpe nature (sucre)",price:12},
-          {name:"Crêpe nature (miel)",price:14},
-          {name:"Crêpe Nutella",price:17},
-          {name:"Crêpe Nutella banane",price:20},
-          {name:"Crêpe Oreo",price:23},
-          {name:"Crêpe spaghetti ZUS",price:23},
-          {name:"Crêpe tagliatelles ZUS",price:24},
-          {name:"Crêpe kunafa pistache",price:25},
-          {name:"Crêpe Lotus Speculoos",price:29},
-          {name:"Crêpe blanche neige",price:35}
-        ]
-      },
-      {
-        name: "ZUS Deal Breakfast",
-        items: [
-          {name:"Pauz Zen Cake",price:9},
-          {name:"Pauz Zen Beldi",price:12},
-          {name:"Pauz Zen Bahla",price:12},
-          {name:"Pauz Zen Briwate",price:16},
-          {name:"Pauz Zen French Toast",price:35},
-          {name:"Deal Pauz Zen (Beldi + thé)",price:15},
-          {name:"Deal Pauz Zen (Bahla + thé)",price:15},
-          {name:"Deal Pauz Zen (Briwate + thé)",price:19},
-          {name:"Supplément miel, beurre, confiture",price:2}
-        ]
-      },
-      {
-        name: "Boissons chaudes",
-        items: [
-          {name:"Espresso",price:8},
-          {name:"Americano",price:10},
-          {name:"Marocchino Nass Nass",price:19},
-          {name:"Cappuccino",price:12},
-          {name:"Chocolat chaud",price:13},
-          {name:"Cappuccino Nutella",price:15},
-          {name:"ZUS Spanish Latte",price:18}
-        ]
-      },
-      {
-        name: "Milkshake",
-        items: [
-          {name:"ZUS Cookies",price:22},
-          {name:"ZUS Oreo Crush",price:24},
-          {name:"ZUS Frappe Chocolat",price:26},
-          {name:"ZUS Frappe Fraise",price:26},
-          {name:"ZUS Frappe Caramel",price:26},
-          {name:"ZUS Snickers Bomb",price:30},
-          {name:"Original Piña Colada",price:32},
-          {name:"Grand Frappuccino Strawberry",price:33},
-          {name:"Grand Frappuccino Blueberry",price:33}
-        ]
-      },
-      {
-        name: "Glacées & Iced",
-        items: [
-          {name:"ZUS Iced Coffee",price:12},
-          {name:"Mojito classique",price:12},
-          {name:"Mojito fraise",price:18},
-          {name:"Mojito mangue",price:18},
-          {name:"Iced Macchiato Caramel",price:19},
-          {name:"Iced Spanish Latte",price:20},
-          {name:"Iced Coffee Orange Juice",price:29}
-        ]
-      },
-      {
-        name: "Jus",
-        items: [
-          {name:"Jus d’orange",price:13},
-          {name:"Banane",price:16},
-          {name:"Fraise",price:16},
-          {name:"Mangue",price:19},
-          {name:"Ananas",price:20},
-          {name:"Mocktail Sunshine Twist",price:30}
-        ]
-      },
-      {
-        name: "Green Tea & Coffee",
-        items: [
-          {name:"Thé Mna3na3",price:5},
-          {name:"Matcha Latte",price:40},
-          {name:"Matcha Iced Latte",price:44},
-          {name:"Matcha Smoothie Banana",price:49},
-          {name:"Detox 1",price:42},
-          {name:"Detox 2",price:45}
-        ]
-      }
-    ];
-
-    const search = document.getElementById("search");
-    const menu = document.getElementById("menu");
-    const nav = document.getElementById("categories");
-    const empty = document.getElementById("empty");
-    let activeCategory = "all";
-
-    function normalize(text) {
-      return text.toLocaleLowerCase("fr").normalize("NFD")
-        .replace(/[\u0300-\u036f]/g, "");
-    }
-
-    function render() {
-      const query = normalize(search.value.trim());
-
-      nav.innerHTML = "";
-      const allButton = document.createElement("button");
-      allButton.type = "button";
-      allButton.className = "chip" +
-        (activeCategory === "all" ? " active" : "");
-      allButton.textContent = "Tout le menu";
-      allButton.onclick = () => {
-        activeCategory = "all";
-        render();
-      };
-      nav.appendChild(allButton);
-
-      sections.forEach((section, index) => {
-        const button = document.createElement("button");
-        button.type = "button";
-        button.className = "chip" +
-          (activeCategory === String(index) ? " active" : "");
-        button.textContent = section.name;
-        button.onclick = () => {
-          activeCategory = String(index);
-          render();
-        };
-        nav.appendChild(button);
-      });
-
-      menu.innerHTML = "";
-      let total = 0;
-
-      sections.forEach((section, index) => {
-        if (activeCategory !== "all" &&
-            activeCategory !== String(index)) return;
-
-        const matches = section.items.filter(item =>
-          normalize(item.name).includes(query)
-        );
-
-        if (!matches.length) return;
-
-        total += matches.length;
-        const card = document.createElement("section");
-        card.className = "section";
-
-        const heading = document.createElement("h2");
-        heading.textContent = section.name;
-        card.appendChild(heading);
-
-        matches.forEach(item => {
-          const row = document.createElement("div");
-          row.className = "item";
-
-          const name = document.createElement("div");
-          name.className = "item-name";
-          name.textContent = item.name;
-
-          const price = document.createElement("div");
-          price.className = "price";
-          price.textContent = item.price + " DH";
-
-          row.append(name, price);
-          card.appendChild(row);
-        });
-
-        menu.appendChild(card);
-      });
-
-      empty.style.display = total ? "none" : "block";
-    }
-
-    search.addEventListener("input", render);
-
-    document.getElementById("clear").addEventListener("click", () => {
-      search.value = "";
-      activeCategory = "all";
-      render();
-      search.focus();
-    });
-
-    render();
-  </script>
 </body>
 </html>
