@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#7952a8">
-  <meta name="description" content="Découvrez les menus originaux de ZUS Café.">
-  <title>ZUS Café | Nos Menus</title>
+  <meta name="description" content="Découvrez les menus de ZUS Coffee Shop : boissons et douceurs.">
+  <title>ZUS Coffee Shop | Nos Menus</title>
 
   <style>
     :root {
@@ -50,23 +50,25 @@
 
     .brand {
       color: var(--purple-dark);
-      font-size: 29px;
+      font-size: 28px;
       font-weight: 900;
-      letter-spacing: 3px;
+      letter-spacing: 2px;
+      line-height: 1.1;
     }
 
     .brand small {
       display: block;
       font-size: 10px;
-      letter-spacing: 4px;
+      letter-spacing: 3px;
       text-align: center;
-      margin-top: 2px;
+      margin-top: 5px;
     }
 
     .nav a {
       color: var(--purple-dark);
       text-decoration: none;
       font-weight: bold;
+      font-size: 14px;
     }
 
     .hero {
@@ -86,12 +88,12 @@
     h1 {
       font-size: clamp(36px, 7vw, 60px);
       color: var(--purple-dark);
-      margin: 15px 0;
+      margin: 18px 0;
     }
 
     .hero p {
       color: var(--muted);
-      max-width: 550px;
+      max-width: 580px;
       margin: auto;
       line-height: 1.8;
       font-size: 16px;
@@ -99,7 +101,6 @@
 
     .button {
       display: inline-block;
-      margin-top: 20px;
       padding: 13px 22px;
       background: var(--purple);
       color: white;
@@ -109,6 +110,10 @@
       border: 0;
       cursor: pointer;
       font-size: 14px;
+    }
+
+    .hero .button {
+      margin-top: 25px;
     }
 
     .button.secondary {
@@ -180,10 +185,6 @@
       margin-top: 18px;
     }
 
-    .menu-actions .button {
-      margin-top: 0;
-    }
-
     .gallery {
       margin-top: 55px;
     }
@@ -215,9 +216,8 @@
       display: block;
       width: 100%;
       height: auto;
-      max-height: 850px;
       object-fit: contain;
-      background: #fff;
+      background: white;
       cursor: zoom-in;
     }
 
@@ -234,8 +234,8 @@
       position: fixed;
       inset: 0;
       z-index: 1000;
-      background: rgba(24, 15, 32, 0.94);
-      padding: 55px 12px 18px;
+      background: rgba(24, 15, 32, 0.95);
+      padding: 60px 12px 20px;
       overflow: auto;
       text-align: center;
     }
@@ -246,9 +246,8 @@
 
     .lightbox img {
       max-width: 100%;
-      height: auto;
       width: auto;
-      max-height: none;
+      height: auto;
       margin: auto;
       cursor: zoom-in;
     }
@@ -277,7 +276,7 @@
     }
 
     footer strong {
-      letter-spacing: 3px;
+      letter-spacing: 2px;
     }
 
     @media (max-width: 700px) {
@@ -297,12 +296,12 @@
         padding: 20px;
       }
 
-      .view-heading {
-        align-items: flex-start;
-      }
-
       .nav a {
         font-size: 13px;
+      }
+
+      .brand {
+        font-size: 23px;
       }
     }
   </style>
@@ -313,18 +312,19 @@
     <div class="nav">
       <div class="brand">
         ZUS
-        <small>CAFÉ</small>
+        <small>COFFEE SHOP</small>
       </div>
-      <a href="#menus">Découvrir le menu ↓</a>
+      <a href="#menus">Découvrir nos menus ↓</a>
     </div>
   </header>
 
   <section class="hero">
-    <div class="eyebrow">Bienvenue chez ZUS Café</div>
+    <div class="eyebrow">Bienvenue chez ZUS Coffee Shop</div>
     <h1>Un moment pour vous.</h1>
     <p>
       Découvrez nos boissons et nos douceurs.
-      Consultez les cartes originales de ZUS Café directement sur votre téléphone.
+      Consultez les cartes originales de ZUS Coffee Shop
+      directement sur votre téléphone.
     </p>
     <a class="button" href="#menus">Découvrir nos menus</a>
   </section>
@@ -372,7 +372,7 @@
     <section class="gallery">
       <h2 class="section-title">Nos Cartes Originales</h2>
       <p class="section-description">
-        Les images originales sont affichées ci-dessous.
+        Consultez les images originales de nos deux menus.
       </p>
 
       <article class="menu-view" id="boissons">
@@ -387,12 +387,12 @@
           id="drinksImage"
           class="menu-image"
           src="./drinks%20menu.png"
-          alt="Menu original des boissons de ZUS Café"
+          alt="Menu original des boissons de ZUS Coffee Shop"
           loading="lazy"
           onclick="openMenuImage('drinksImage')"
         >
         <div class="image-note">
-          Appuyez sur l'image pour l'agrandir.
+          Appuyez sur l'image ou sur « Agrandir » pour mieux lire la carte.
         </div>
       </article>
 
@@ -408,12 +408,12 @@
           id="sweetiesImage"
           class="menu-image"
           src="./sweeties%20menu.png"
-          alt="Menu original des douceurs de ZUS Café"
+          alt="Menu original des douceurs de ZUS Coffee Shop"
           loading="lazy"
           onclick="openMenuImage('sweetiesImage')"
         >
         <div class="image-note">
-          Appuyez sur l'image pour l'agrandir.
+          Appuyez sur l'image ou sur « Agrandir » pour mieux lire la carte.
         </div>
       </article>
     </section>
@@ -421,7 +421,7 @@
 
   <div class="lightbox" id="lightbox"
        role="dialog" aria-modal="true"
-       aria-label="Agrandissement du menu"
+       aria-label="Menu agrandi"
        onclick="closeMenuImage()">
     <button class="close-lightbox" type="button"
             aria-label="Fermer"
@@ -431,7 +431,7 @@
   </div>
 
   <footer>
-    <strong>ZUS CAFÉ</strong>
+    <strong>ZUS COFFEE SHOP</strong>
     <div>Merci de votre visite.</div>
   </footer>
 
