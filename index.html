@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#7952a8">
-  <meta name="description" content="Découvrez les menus boissons et douceurs de ZUS Café.">
-  <title>ZUS Café | Notre Menu</title>
+  <meta name="description" content="Découvrez les menus originaux de ZUS Café.">
+  <title>ZUS Café | Nos Menus</title>
 
   <style>
     :root {
@@ -37,9 +37,6 @@
       background: var(--white);
       border-bottom: 1px solid var(--border);
       padding: 15px 20px;
-      position: sticky;
-      top: 0;
-      z-index: 10;
     }
 
     .nav {
@@ -53,7 +50,7 @@
 
     .brand {
       color: var(--purple-dark);
-      font-size: 28px;
+      font-size: 29px;
       font-weight: 900;
       letter-spacing: 3px;
     }
@@ -62,7 +59,6 @@
       display: block;
       font-size: 10px;
       letter-spacing: 4px;
-      color: var(--muted);
       text-align: center;
       margin-top: 2px;
     }
@@ -71,13 +67,12 @@
       color: var(--purple-dark);
       text-decoration: none;
       font-weight: bold;
-      font-size: 14px;
     }
 
     .hero {
       text-align: center;
-      padding: 58px 20px 48px;
-      background: linear-gradient(145deg, #f1e8fa, #ffffff 75%);
+      padding: 65px 20px 55px;
+      background: linear-gradient(145deg, #eee3f8, #ffffff 75%);
     }
 
     .eyebrow {
@@ -96,119 +91,113 @@
 
     .hero p {
       color: var(--muted);
-      max-width: 540px;
+      max-width: 550px;
       margin: auto;
-      line-height: 1.7;
+      line-height: 1.8;
       font-size: 16px;
     }
 
-    .hero-button {
+    .button {
       display: inline-block;
-      margin-top: 25px;
-      padding: 14px 25px;
+      margin-top: 20px;
+      padding: 13px 22px;
       background: var(--purple);
       color: white;
       text-decoration: none;
       border-radius: 30px;
       font-weight: bold;
+      border: 0;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .button.secondary {
+      background: var(--purple-light);
+      color: var(--purple-dark);
     }
 
     main {
       max-width: 1100px;
       margin: auto;
-      padding: 35px 18px 55px;
+      padding: 40px 20px 60px;
     }
 
     .section-title {
       text-align: center;
       color: var(--purple-dark);
-      font-size: 30px;
+      font-size: 32px;
       margin-bottom: 10px;
     }
 
     .section-description {
       text-align: center;
       color: var(--muted);
-      margin-bottom: 30px;
-      line-height: 1.6;
+      line-height: 1.7;
+      margin: 0 auto 30px;
     }
 
     .menus {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 22px;
+      gap: 24px;
     }
 
     .menu-card {
       background: white;
       border: 1px solid var(--border);
       border-radius: 22px;
-      padding: 22px;
-      box-shadow: 0 8px 28px rgba(80, 49, 111, 0.06);
+      padding: 24px;
+      box-shadow: 0 8px 28px rgba(80, 49, 111, 0.07);
       min-width: 0;
     }
 
     .menu-icon {
-      width: 54px;
-      height: 54px;
+      width: 55px;
+      height: 55px;
       display: grid;
       place-items: center;
       border-radius: 16px;
       background: var(--purple-light);
-      font-size: 27px;
-      margin-bottom: 15px;
+      font-size: 28px;
+      margin-bottom: 16px;
     }
 
     .menu-card h3 {
-      font-size: 23px;
       color: var(--purple-dark);
+      font-size: 23px;
       margin: 0 0 10px;
     }
 
     .menu-card p {
       color: var(--muted);
-      line-height: 1.6;
-      min-height: 48px;
+      line-height: 1.7;
     }
 
     .menu-actions {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
-      margin-top: 20px;
+      margin-top: 18px;
     }
 
-    .action {
-      display: inline-block;
-      text-align: center;
-      padding: 12px 16px;
-      border-radius: 12px;
-      background: var(--purple);
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 14px;
+    .menu-actions .button {
+      margin-top: 0;
     }
 
-    .action.secondary {
-      background: var(--purple-light);
-      color: var(--purple-dark);
+    .gallery {
+      margin-top: 55px;
     }
 
-    .viewer-section {
-      margin-top: 45px;
-    }
-
-    .viewer-card {
+    .menu-view {
       background: white;
       border: 1px solid var(--border);
       border-radius: 20px;
       overflow: hidden;
-      margin-top: 22px;
+      margin-top: 25px;
     }
 
-    .viewer-heading {
-      padding: 17px 20px;
+    .view-heading {
+      padding: 18px 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -216,25 +205,67 @@
       gap: 12px;
     }
 
-    .viewer-heading h3 {
+    .view-heading h3 {
       color: var(--purple-dark);
       margin: 0;
+      font-size: 21px;
     }
 
-    .pdf-viewer {
+    .menu-image {
       display: block;
       width: 100%;
-      height: 650px;
-      border: 0;
-      background: #f4f0f7;
+      height: auto;
+      max-height: 850px;
+      object-fit: contain;
+      background: #fff;
+      cursor: zoom-in;
     }
 
-    .viewer-note {
+    .image-note {
       padding: 14px 18px;
       color: var(--muted);
       font-size: 13px;
       line-height: 1.6;
       border-top: 1px solid var(--border);
+    }
+
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      background: rgba(24, 15, 32, 0.94);
+      padding: 55px 12px 18px;
+      overflow: auto;
+      text-align: center;
+    }
+
+    .lightbox.open {
+      display: block;
+    }
+
+    .lightbox img {
+      max-width: 100%;
+      height: auto;
+      width: auto;
+      max-height: none;
+      margin: auto;
+      cursor: zoom-in;
+    }
+
+    .close-lightbox {
+      position: fixed;
+      top: 12px;
+      right: 18px;
+      background: white;
+      color: var(--purple-dark);
+      border: none;
+      border-radius: 50%;
+      width: 42px;
+      height: 42px;
+      font-size: 27px;
+      cursor: pointer;
+      z-index: 1001;
     }
 
     footer {
@@ -255,15 +286,23 @@
       }
 
       .hero {
-        padding-top: 42px;
+        padding: 45px 18px;
       }
 
-      .pdf-viewer {
-        height: 520px;
+      main {
+        padding: 30px 14px 45px;
       }
 
-      .menu-card p {
-        min-height: 0;
+      .menu-card {
+        padding: 20px;
+      }
+
+      .view-heading {
+        align-items: flex-start;
+      }
+
+      .nav a {
+        font-size: 13px;
       }
     }
   </style>
@@ -276,7 +315,7 @@
         ZUS
         <small>CAFÉ</small>
       </div>
-      <a href="#menus">Découvrir nos menus ↓</a>
+      <a href="#menus">Découvrir le menu ↓</a>
     </div>
   </header>
 
@@ -284,17 +323,17 @@
     <div class="eyebrow">Bienvenue chez ZUS Café</div>
     <h1>Un moment pour vous.</h1>
     <p>
-      Découvrez notre sélection de boissons et de douceurs.
-      Consultez nos menus directement sur votre téléphone.
+      Découvrez nos boissons et nos douceurs.
+      Consultez les cartes originales de ZUS Café directement sur votre téléphone.
     </p>
-    <a class="hero-button" href="#menus">Découvrir le menu</a>
+    <a class="button" href="#menus">Découvrir nos menus</a>
   </section>
 
   <main>
     <section id="menus">
       <h2 class="section-title">Nos Menus</h2>
       <p class="section-description">
-        Choisissez votre menu pour consulter la carte originale.
+        Choisissez une carte pour consulter les produits et les prix originaux.
       </p>
 
       <div class="menus">
@@ -302,14 +341,14 @@
           <div class="menu-icon" aria-hidden="true">☕</div>
           <h3>Menu Boissons</h3>
           <p>
-            Découvrez notre carte des boissons et consultez les
-            informations présentes sur le menu original.
+            Retrouvez notre carte originale des boissons.
+            Appuyez sur l'image pour l'agrandir.
           </p>
           <div class="menu-actions">
-            <a class="action" href="./Menu%20Drinks.pdf" target="_blank"
-               rel="noopener">Voir le menu</a>
-            <a class="action secondary" href="./Menu%20Drinks.pdf"
-               download>Télécharger PDF</a>
+            <a class="button" href="#boissons">Voir le menu</a>
+            <a class="button secondary"
+               href="./drinks%20menu.png"
+               download="drinks-menu.png">Télécharger l'image</a>
           </div>
         </article>
 
@@ -317,57 +356,107 @@
           <div class="menu-icon" aria-hidden="true">🍰</div>
           <h3>Menu Douceurs</h3>
           <p>
-            Retrouvez notre carte des douceurs et des desserts
-            dans son document original.
+            Retrouvez notre carte originale des douceurs.
+            Appuyez sur l'image pour l'agrandir.
           </p>
           <div class="menu-actions">
-            <a class="action" href="./Menu%20sweeties.pdf" target="_blank"
-               rel="noopener">Voir le menu</a>
-            <a class="action secondary" href="./Menu%20sweeties.pdf"
-               download>Télécharger PDF</a>
+            <a class="button" href="#douceurs">Voir le menu</a>
+            <a class="button secondary"
+               href="./sweeties%20menu.png"
+               download="sweeties-menu.png">Télécharger l'image</a>
           </div>
         </article>
       </div>
     </section>
 
-    <section class="viewer-section">
-      <h2 class="section-title">Consulter les cartes</h2>
+    <section class="gallery">
+      <h2 class="section-title">Nos Cartes Originales</h2>
       <p class="section-description">
-        Les documents originaux sont affichés ci-dessous.
-        Sur téléphone, utilisez « Voir le menu » si l'aperçu ne s'affiche pas.
+        Les images originales sont affichées ci-dessous.
       </p>
 
-      <div class="viewer-card">
-        <div class="viewer-heading">
+      <article class="menu-view" id="boissons">
+        <div class="view-heading">
           <h3>☕ Menu Boissons</h3>
-          <a class="action" href="./Menu%20Drinks.pdf" target="_blank"
-             rel="noopener">Ouvrir en plein écran</a>
+          <button class="button" type="button"
+                  onclick="openMenuImage('drinksImage')">
+            Agrandir
+          </button>
         </div>
-        <iframe class="pdf-viewer" src="./Menu%20Drinks.pdf"
-                title="Menu original des boissons"></iframe>
-        <div class="viewer-note">
-          Si le document ne s'affiche pas, cliquez sur « Ouvrir en plein écran ».
+        <img
+          id="drinksImage"
+          class="menu-image"
+          src="./drinks%20menu.png"
+          alt="Menu original des boissons de ZUS Café"
+          loading="lazy"
+          onclick="openMenuImage('drinksImage')"
+        >
+        <div class="image-note">
+          Appuyez sur l'image pour l'agrandir.
         </div>
-      </div>
+      </article>
 
-      <div class="viewer-card">
-        <div class="viewer-heading">
+      <article class="menu-view" id="douceurs">
+        <div class="view-heading">
           <h3>🍰 Menu Douceurs</h3>
-          <a class="action" href="./Menu%20sweeties.pdf" target="_blank"
-             rel="noopener">Ouvrir en plein écran</a>
+          <button class="button" type="button"
+                  onclick="openMenuImage('sweetiesImage')">
+            Agrandir
+          </button>
         </div>
-        <iframe class="pdf-viewer" src="./Menu%20sweeties.pdf"
-                title="Menu original des douceurs"></iframe>
-        <div class="viewer-note">
-          Si le document ne s'affiche pas, cliquez sur « Ouvrir en plein écran ».
+        <img
+          id="sweetiesImage"
+          class="menu-image"
+          src="./sweeties%20menu.png"
+          alt="Menu original des douceurs de ZUS Café"
+          loading="lazy"
+          onclick="openMenuImage('sweetiesImage')"
+        >
+        <div class="image-note">
+          Appuyez sur l'image pour l'agrandir.
         </div>
-      </div>
+      </article>
     </section>
   </main>
+
+  <div class="lightbox" id="lightbox"
+       role="dialog" aria-modal="true"
+       aria-label="Agrandissement du menu"
+       onclick="closeMenuImage()">
+    <button class="close-lightbox" type="button"
+            aria-label="Fermer"
+            onclick="closeMenuImage()">×</button>
+    <img id="lightboxImage" src="" alt="Menu agrandi"
+         onclick="event.stopPropagation()">
+  </div>
 
   <footer>
     <strong>ZUS CAFÉ</strong>
     <div>Merci de votre visite.</div>
   </footer>
+
+  <script>
+    function openMenuImage(imageId) {
+      const original = document.getElementById(imageId);
+      const lightbox = document.getElementById('lightbox');
+      const enlarged = document.getElementById('lightboxImage');
+
+      enlarged.src = original.src;
+      enlarged.alt = original.alt;
+      lightbox.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeMenuImage() {
+      document.getElementById('lightbox').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        closeMenuImage();
+      }
+    });
+  </script>
 </body>
 </html>
